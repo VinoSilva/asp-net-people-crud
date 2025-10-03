@@ -4,9 +4,10 @@ using DotNetEnv;
 
 var builder = WebApplication.CreateBuilder(args);
 
+Env.Load();
+
 var connectionString = builder.Configuration.GetConnectionString("default") ?? Environment.GetEnvironmentVariable("ConnectionStrings__Default"); ;
 
-Env.Load();
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 // builder.Services.AddEndpointsApiExplorer();
